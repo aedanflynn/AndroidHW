@@ -15,6 +15,5 @@
         android:text="Start Quiz"
         android:id="@+id/button"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="onClick()" />
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

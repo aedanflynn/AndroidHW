@@ -5,12 +5,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.app.AlertDialog;
-
+import android.widget.Button;
+import android.widget.EditText;
+import android.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -77,6 +78,130 @@ public class Question2 extends Fragment {
         }
     }
 
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        //Find the +1 button
+        Button button = (Button) view.findViewById(R.id.radioButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dlgAlert = new AlertDialog.Builder(getActivity());
+                dlgAlert.setMessage("Score: 1 / 2");
+                dlgAlert.setTitle("Congrats, You finished!");
+                dlgAlert.setPositiveButton("Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                //dismiss the dialog
+                                Intent restart = new Intent(getActivity(), MainActivity.class);
+                                dialog.dismiss();
+                                startActivity(restart);
+                            }
+                        });
+                dlgAlert.setNegativeButton("Quit",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                dialog.dismiss();
+                                System.exit(1);
+                            }
+                        });
+
+                dlgAlert.setCancelable(true);
+                dlgAlert.create().show();
+            }
+        });
+
+        Button button2 = (Button) view.findViewById(R.id.radioButton2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(getActivity());
+                dlgAlert.setMessage("Score: 1 / 2" );
+                dlgAlert.setTitle("Congrats, You finished!");
+                dlgAlert.setPositiveButton("Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                //dismiss the dialog
+                                Intent restart = new Intent(getActivity(), MainActivity.class);
+                                dialog.dismiss();
+                                startActivity(restart);
+                            }
+                        });
+                dlgAlert.setNegativeButton("Quit",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                dialog.dismiss();
+                                System.exit(1);
+                            }
+                        });
+
+                dlgAlert.setCancelable(true);
+                dlgAlert.create().show();
+            }
+        });
+
+        Button button3 = (Button) view.findViewById(R.id.radioButton3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(getActivity());
+                dlgAlert.setMessage("Score: 1 / 2" );
+                dlgAlert.setTitle("Congrats, You finished!");
+                dlgAlert.setPositiveButton("Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                //dismiss the dialog
+                                Intent restart = new Intent(getActivity(), MainActivity.class);
+                                dialog.dismiss();
+                                startActivity(restart);
+                            }
+                        });
+                dlgAlert.setNegativeButton("Quit",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                dialog.dismiss();
+                                System.exit(1);
+                            }
+                        });
+
+                dlgAlert.setCancelable(true);
+                dlgAlert.create().show();
+            }
+        });
+        Button button4 = (Button) view.findViewById(R.id.radioButton4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(getActivity());
+                dlgAlert.setMessage("Score: 1 / 2" );
+                dlgAlert.setTitle("Congrats, You finished!");
+                dlgAlert.setPositiveButton("Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                //dismiss the dialog
+                                Intent restart = new Intent(getActivity(), MainActivity.class);
+                                dialog.dismiss();
+                                startActivity(restart);
+                            }
+                        });
+                dlgAlert.setNegativeButton("Quit",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                dialog.dismiss();
+                                System.exit(1);
+                            }
+                        });
+
+                dlgAlert.setCancelable(true);
+                dlgAlert.create().show();
+            }
+        });
+    }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -109,17 +234,14 @@ public class Question2 extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    private void onClick1(){
-        final MainActivity main = (MainActivity) getActivity();
-        int numberCorrect = main.getCorrect();
+    public void onClick1(View view){
         AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(getActivity());
-        dlgAlert.setMessage("Congrats, You finished! /n Score: " + numberCorrect + " / 2" );
+        dlgAlert.setMessage("Congrats, You finished! /n Score: 1 / 2" );
         dlgAlert.setTitle("Quiz Finished");
         dlgAlert.setPositiveButton("Ok",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         //dismiss the dialog
-                        main.resetCorrect();
                         Intent restart = new Intent(getActivity(), MainActivity.class);
                         dialog.dismiss();
                         startActivity(restart);
@@ -138,18 +260,14 @@ public class Question2 extends Fragment {
         dlgAlert.create().show();
     }
 
-    private void onClick2(){
-        final MainActivity main = (MainActivity) getActivity();
-        main.changeCorrect(1);
-        int numberCorrect = main.getCorrect();
+    public void onClick2(View view){
         AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(getActivity());
-        dlgAlert.setMessage("Congrats, You finished! /n Score: " + numberCorrect + " / 2");
+        dlgAlert.setMessage("Congrats, You finished! /n Score: 0 / 2");
         dlgAlert.setTitle("Quiz Finished");
         dlgAlert.setPositiveButton("Ok",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         //dismiss the dialog
-                        main.resetCorrect();
                         Intent restart = new Intent(getActivity(), MainActivity.class);
                         dialog.dismiss();
                         startActivity(restart);

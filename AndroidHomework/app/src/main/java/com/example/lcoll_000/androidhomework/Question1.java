@@ -5,11 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.app.Fragment;
 
 import com.google.android.gms.plus.PlusOneButton;
 
@@ -65,6 +66,8 @@ public class Question1 extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
@@ -73,9 +76,29 @@ public class Question1 extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_question1, container, false);
 
-        //Find the +1 button
+
 
         return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        //Find the +1 button
+        Button button = (Button) view.findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.play_frag_container, Question2.newInstance(null, null))
+                        .addToBackStack(null)
+                        .commit();
+
+            }
+        });
     }
 
     @Override
@@ -117,16 +140,6 @@ public class Question1 extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    public void onClick(){
-        EditText answerText = (EditText) getActivity().findViewById(R.id.editText);
-        String answer = answerText.getText().toString();
-        if (answer == ""){
-            MainActivity main = (MainActivity) getActivity();
-            main.changeCorrect(1);
-            //TODO
-        }
-        Intent nextQ = new Intent(getActivity(), Question2.class);
-        startActivity(nextQ);
-    }
+
 
 }
