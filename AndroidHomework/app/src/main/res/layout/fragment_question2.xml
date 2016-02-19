@@ -12,10 +12,10 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="308dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Question With Multiple Answers"
+            android:text="How many CURRENT Mission Impossible Movies are there?"
             android:id="@+id/textView2"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="200px" />
@@ -23,7 +23,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button 4"
+            android:text="3"
             android:id="@+id/radioButton"
             android:layout_gravity="center_horizontal"
             android:checked="false"
@@ -32,7 +32,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button 3"
+            android:text="4"
             android:id="@+id/radioButton2"
             android:layout_gravity="center_horizontal"
             android:checked="false"
@@ -41,7 +41,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button 2"
+            android:text="5"
             android:id="@+id/radioButton3"
             android:layout_gravity="center_horizontal"
             android:checked="false"
@@ -50,7 +50,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button 1"
+            android:text="6"
             android:id="@+id/radioButton4"
             android:layout_gravity="center_horizontal"
             android:checked="false"
